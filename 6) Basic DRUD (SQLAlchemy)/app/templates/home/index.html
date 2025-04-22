@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Update User{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="text-center">
+        <h1 class="text-primary text-decoration-underline">Dashboard</h1>
+        <p class="lead mt-3">Total Users: <strong>{{ user_count }}</strong></p>
+
+        <div class="mt-4">
+            <a href="/user/create" class="btn btn-success">Add User</a>
+            <a href="/user/list" class="btn btn-success">View Users</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

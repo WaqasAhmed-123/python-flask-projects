@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container text-center">
+    <h1 class="mt-4">{{ 'Admin ' if session.get('user_role') == 1 else '' }}Dashboard</h1>
+    
+    <div class="row mt-5">
+        {% if session.get('user_role') == 1 %}
+        <div class="col-md-6">
+            <div class="card shadow p-4">
+                <h3>Total Users</h3>
+                <h2 class="text-primary">{{ user_count }}</h2>
+                <a href="{{ url_for('user_routes.list') }}" class="btn btn-outline-primary mt-3">View Users</a>
+            </div>
+        </div>
+        {% endif %}
+
+        
+        <div class="{{ 'col-md-6' if session.get('user_role') == 1 else 'offset-md-3 col-md-6' }}">
+            <div class="card shadow p-4">
+                <h3>Total Blogs</h3>
+                <h2 class="text-success">{{ blog_count }}</h2>
+                <a href="{{ url_for('blog_routes.list') }}" class="btn btn-outline-success mt-3">View Blogs</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ blog.title }}{% endblock %}
+
+{% block content %}
+<section class="py-3">
+    <div class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card border border-light-subtle rounded-3 shadow-sm">
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-md-8 mx-auto text-center">
+                                <h1 class="my-1 text-decoration-underline">{{ blog.title }}</h1>
+                                <div class="my-3 d-flex justify-content-between">
+                                    <div>
+                                        <b>Author: </b> {{ blog.author }}
+                                    </div>
+                                    <div><b>Published: </b> {{ blog.created_at }}</div></div>
+                                {% if blog.image_path %}
+                                    <img src="{{ '/' + blog.image_path }}" class="img-fluid rounded mb-4" alt="Blog Image" style="width: 500px; height: 300px;">
+                                {% else %}
+                                    <img src="{{url_for('static', filename='uploads/defualt-blog.png')}}" class="img-fluid rounded mb-4" alt="Default Blog Image" style="width: 500px; height: 300px;">
+                                {% endif %}
+                    
+                                <div class="mb-4">
+                                    <p class="lead">{{ blog.content }}</p>
+                                </div>
+                    
+                                <hr>
+                    
+                                <a href="{{ url_for('blog_routes.list') }}">Back to Blogs</a>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

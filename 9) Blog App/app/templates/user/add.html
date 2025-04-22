@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}Add User{% endblock %}
+
+{% block content %}
+<section class="py-3 py-md-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+                <div class="card border border-light-subtle rounded-3 shadow-sm">
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                            <h2>Add User</h2>
+                        </div>
+                        
+                        <form action="/user/add" method="POST">
+                            {{ form.hidden_tag() }}
+
+                            <div class="row gy-2 overflow-hidden px-3">
+
+                                <div class="col-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="Name" value="{{ form.name.data or '' }}">
+                                        <label for="name" class="form-label">Name <small class="text-danger">*</small></label>
+                                        {% if form.name.errors %}
+                                            <small class="text-danger">{{ form.name.errors[0] }}</small>
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="Email" value="{{ form.email.data or '' }}">
+                                        <label for="email" class="form-label">Email <small class="text-danger">*</small></label>
+                                        {% if form.email.errors %}
+                                            <small class="text-danger">{{ form.email.errors[0] }}</small>
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" name="password" id="password" class="form-control" placeholder="Password" value="{{ form.password.data or '' }}">
+                                        <label for="password" class="form-label">Password <small class="text-danger">*</small></label>
+                                        {% if form.password.errors %}
+                                            <small class="text-danger">{{ form.password.errors[0] }}</small>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="col-12">
+                                    <div class="d-grid my-3">
+                                        <button class="btn btn-primary btn-lg" type="submit">Add</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
