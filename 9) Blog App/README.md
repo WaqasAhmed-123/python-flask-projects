@@ -2,7 +2,11 @@
 
 A full-featured Flask-based web application that supports multi-role user access, secure authentication, blog management, and a clean Bootstrap 5 UI.
 
-## 🔧 Features
+## Demo Link 
+  https://www.youtube.com/watch?v=c9c74r-EMjo
+
+
+## Features
 
 - ✅ Multi-role authentication (admin, users)
 - ✅ Role-based protected routes using custom Flask decorators
@@ -20,7 +24,7 @@ A full-featured Flask-based web application that supports multi-role user access
 - ✅ Bootstrap 5 UI with flash messages and alerts
 
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 flask_crud_app/
@@ -39,7 +43,7 @@ flask_crud_app/
 └── requirements.txt
 ```
 
-## ⚙️ Tech Stack
+## Tech Stack
 - Python 3.10+
 - Flask
 - SQLite (can easily switch to PostgreSQL/MySQL)
@@ -51,7 +55,7 @@ flask_crud_app/
 - Cryptography (Fernet)
 
 
-## 🚀 How to Run
+## How to Run
 
 1. **Set up virtual environment**
 ```bash
@@ -85,6 +89,6 @@ python run.py
 http://localhost:5000
 ```
 
-## 🧪 Default Admin (Seeded)
+## Default Admin (Seeded)
 - Email: `admin@gmail.com`
 - Password: `admin@123`
